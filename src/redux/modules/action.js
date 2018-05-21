@@ -50,6 +50,9 @@ export function setVoteStatus (movie, status) {
             }
             return item
         })
+        if (window.localStorage) {
+            localStorage.watchedMoviesData = JSON.stringify(updatedData)
+        }
         dispatch(setWatchedMoviesData(updatedData))
     }
 }
